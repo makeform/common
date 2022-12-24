@@ -1,1 +1,5 @@
-# common
+# @makeform/common
+
+## License
+
+MIT
