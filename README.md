@@ -30,6 +30,17 @@ supported configs:
    - preserved for child block to use
 
 
+## default classes
+
+Following are classes used by @makeform/common and all blocks inheriting `@makeform/common`. While you can build the exactly same logic or design conventions with different class names by your own, following these conventions makes it easier to customize your blocks along with the default blocks in headless manner.
+
+ - functional classes:
+   - `m-view`: for nodes that should only be shown in view mode.
+   - `m-edit`: for nodes that should only be shown in view mode.
+ - style classes:
+   - `mf-note`: decorator for note nodes.
+
+
 ## License
 
 MIT
