@@ -68,7 +68,10 @@ mod = ({root, ctx, data, parent, t}, submod) ->
           error:
             list: ~>
               if (s = @status!) != 2 => return []
-              @_errors.slice(0, 1) ++ (if @_errors.length > 1 => ["..."] else [])
+              ret = @_errors.slice(0, 1) ++ (if @_errors.length > 1 => ["..."] else [])
+              # nested is an error indicating there are errors in form managers owned by this widget.
+              # we skip showing nested and let those widgets show by themselves.
+              ret.filter -> it != \nested
             text: ({data}) -> t data
           note:
             list: ~>
