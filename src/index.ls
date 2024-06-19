@@ -49,7 +49,9 @@ mod = ({root, ctx, data, parent, t}, submod) ->
           label: ~> t(lc.meta.title or 'untitled')
           variant: ({node}) ~> t(lc.config.variant or '')
         handler:
-          "@": ({node}) -> node.classList.toggle \m-inline, lc.display != \block
+          "@": ({node}) ~>
+            node.classList.toggle \m-inline, lc.display != \block
+            node.classList.toggle \has-error, @status! == 2
           base: ({node}) ~>
             node.classList.toggle \form-group, (lc.display == \block)
             node.classList.toggle \has-variant, !!lc.config.variant
