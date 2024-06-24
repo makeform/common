@@ -1,5 +1,10 @@
 # Change Logs
 
+## v1.0.3
+
+ - always update local meta when rendering to prevent unsynchronized status.
+
+
 ## v1.0.2
 
  - add `has-error` class at root node when status is 2

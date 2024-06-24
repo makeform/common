@@ -88,6 +88,10 @@ mod = ({root, ctx, data, parent, t}, submod) ->
       submod.init.apply @
 
     render: ->
+      # meta may be updated without firing meta event (for re-init calls for example)
+      # so we should always get the latest meta
+      # this may be bad in performance but we can optimize this later. (TODO)
+      @remeta @serialize!
       if @mod.info.view => @mod.info.view.render!
       submod.render.apply @
   ret = {} <<< submod <<< mod 
