@@ -1,5 +1,10 @@
 # Change Logs
 
+## v1.0.4
+
+ - use `overflow-wrap` to break super long text instead of `word-break: break-all` which breaks all texts
+
+
 ## v1.0.3
 
  - always update local meta when rendering to prevent unsynchronized status.

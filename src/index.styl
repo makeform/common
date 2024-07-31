@@ -4,4 +4,8 @@
   .m-edit { display: none!important }
 :scope.m-edit
   .m-view { display: none!important }
-*[ld=content] { white-space: pre-wrap; word-break: break-all }
+*[ld=content] {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
