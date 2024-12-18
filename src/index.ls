@@ -30,9 +30,9 @@ module.exports =
   init: (opt) ->
     opt.pubsub.on \subinit, (o = {}) ~>
       opt.pubsub.fire \init, mod: mod(opt, o.mod)
-mod = ({root, ctx, data, parent, t}, submod) -> 
+mod = ({root, ctx, data, parent, t}, submod) ->
   {ldview} = ctx
-  mod = 
+  mod =
     init: ->
       @mod.info = lc = {}
       @mod.child = {}
@@ -94,5 +94,5 @@ mod = ({root, ctx, data, parent, t}, submod) ->
       @remeta @serialize!
       if @mod.info.view => @mod.info.view.render!
       submod.render.apply @
-  ret = {} <<< submod <<< mod 
+  ret = {} <<< submod <<< mod
   ret
