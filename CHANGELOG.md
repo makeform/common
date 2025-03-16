@@ -1,5 +1,13 @@
 # Change Logs
 
+## v2.0.0 (upcoming)
+
+ - support `head`, `body` and `foot` plugs when `widget` is not applied.
+ - add plug fallbacks for head, body and foot
+ - add `has-variant` class from `@makeform/input` since `variant` is a common-based feature
+ - explicitly set `manual` only if `has-tips` is available
+
+
 ## v1.0.5
 
  - rebuild for missing artifacts

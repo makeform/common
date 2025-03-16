@@ -21,7 +21,7 @@ supported ld selector:
 
 module.exports =
   pkg:
-    name: "@makeform/common", extend: {name: "@makeform/base"}
+    name: "@makeform/common", extend: {name: "@makeform/base", dom: \overwrite}
     dependencies: []
     i18n: {
       en: "error": "error"
@@ -62,7 +62,9 @@ mod = ({root, ctx, data, parent, t}, submod) ->
             node.innerText = t(lc.meta.desc or '') or ''
           "display": ({node}) ~>
             node.classList.toggle \d-none, node.getAttribute(\data-display) != lc.display
-          "error-root": ({node}) ~> node.classList.toggle \manual, @status! != 2
+          "error-root": ({node}) ~>
+            if node.classList.contains \has-tips =>
+              node.classList.toggle \manual, @status! != 2
           limitation: ({node}) ~>
             v = t(lc.config.limitation or '')
             node.classList.toggle \d-none, !v
