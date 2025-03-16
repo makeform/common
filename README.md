@@ -1,13 +1,20 @@
 # @makeform/common
 
-supported meta:
+Base block implementing common features of a widget.
+
+
+## Supported Meta
+
+`@makeform/common` provides ld selectors and default DOMs for rendering following meta fields:
 
  - `title`: field title.
  - `desc`: description of this field.
  - `isRequired`: true if this field is required.
 
 
-supported configs:
+## Supported Configs
+
+`@makeform/common` provides ld selectors and default DOMs for rendering following config fields:
 
  - `note`: a list of string showing additional note about this field.
  - `limitation`: a string shown as the main requirement of this field.
@@ -17,7 +24,25 @@ supported configs:
    - `block`: header is shown.
 
 
-## interfae
+## ld selectors
+
+As mentioned above, a child block can use following ld selectors to build its own DOM:
+
+ - `base`: node with `form-group` class.
+ - `limitation`: node displaying limitation
+ - `note`: iterable node displaying widget note.
+ - `is-required`: show when value of this widget is required.
+ - `label`: display widget title
+ - `desc`: display widget description
+ - `variant`: display widget variant
+ - `display`: this node will be hidden if `display` mode is different from `data-display` value.
+ - `error`: iterable node displaying widget errros.
+ - `error-root`: node containing error information.
+   - by default `@makeform/common` use `@loadingio/bootstrap.ext` tips to show tips.
+     if `error-root` contains `has-tips` class, `manual` will be toggled based on widget status automatically.
+
+
+## interface
 
 `@makeform/common` provides additional members for child block to access, which are created by `@makeform/common`:
 
