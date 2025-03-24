@@ -6,6 +6,7 @@
  - add plug fallbacks for head, body and foot
  - add `has-variant` class from `@makeform/input` since `variant` is a common-based feature
  - explicitly set `manual` only if `has-tips` is available
+ - add `notes` class, and add margin-top only if notes is not empty to prevent unwanted margin.
 
 
 ## v1.0.5

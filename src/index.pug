@@ -10,7 +10,7 @@ div
       .text-sm.text-muted(ld="display", data-display="block"): div(ld="desc", style="margin:-.6em 0 .7em")
     plug(name="body")
     plug(name="foot")
-      .m-edit.mt-2(ld="display",data-display="block"): .mf-note.text-sm.note(ld-each="note")
+      .m-edit.notes(ld="display",data-display="block"): .mf-note.text-sm.note(ld-each="note")
 
   style(type="text/css"): include:stylus index.styl
   script(type="@plotdb/block"): include:lsc index.ls
