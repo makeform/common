@@ -1,6 +1,6 @@
 # Change Logs
 
-## v2.0.0 (upcoming)
+## v2.0.0
 
  - support `head`, `body` and `foot` plugs when `widget` is not applied.
  - add plug fallbacks for head, body and foot
