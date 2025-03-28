@@ -1,24 +1,3 @@
-/*
-supported ld selector:
- - Done:
-   - error
-   - error-root
-   - limitation
-   - note
-   - is-required
-   - desc
-   - display ( data-display: inline / block )
-
- - TBD
-   - base
-   - label
-   - variant
-   - input
-   - has-unit
-   - content
-*/
-
-
 module.exports =
   pkg:
     name: "@makeform/common", extend: {name: "@makeform/base", dom: \overwrite}
