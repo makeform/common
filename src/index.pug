@@ -1,4 +1,6 @@
 div
+  style(type="text/css"): include:stylus index.styl
+  script(type="@plotdb/block"): include:lsc index.ls
   plug.form-group(name="widget",ld="base")
     plug(name="head")
       div(ld="display", data-display="block"): label.d-flex.align-items-end.flex-wrap.justify-content-between
@@ -11,6 +13,3 @@ div
     plug(name="body")
     plug(name="foot")
       .m-edit.notes(ld="display",data-display="block"): .mf-note.text-sm.note(ld-each="note")
-
-  style(type="text/css"): include:stylus index.styl
-  script(type="@plotdb/block"): include:lsc index.ls
