@@ -1,5 +1,10 @@
 # Change Logs
 
+## v2.0.1
+
+ - fix bug: fallback `config` to `{}` when not given to prevent exception
+
+
 ## v2.0.0
 
  - support `head`, `body` and `foot` plugs when `widget` is not applied.

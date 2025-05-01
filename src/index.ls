@@ -15,10 +15,10 @@ mod = ({root, ctx, data, parent, t}, submod) ->
     init: ->
       @mod.info = lc = {}
       @mod.child = {}
-      @remeta = (v) ->
+      @remeta = (v = {}) ->
         lc.meta = v
         lc.config = v.config or {}
-        lc.display = v.config.display or \block
+        lc.display = lc.config.display or \block
       @on \meta, ~> @remeta @serialize!
       @remeta data
       if !root => return
