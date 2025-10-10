@@ -1,4 +1,6 @@
-div
+//- add `ld-scope` to ensure scoping. this might be a breaking change -
+//- however most of the case it should be fine since we even have ld-scope in many widget div.
+div(ld-scope)
   style(type="text/css"): include:stylus index.styl
   script(type="@plotdb/block"): include:lsc index.ls
   plug.form-group(name="widget",ld="base")

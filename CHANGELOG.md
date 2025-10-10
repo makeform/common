@@ -1,5 +1,10 @@
 # Change Logs
 
+## v2.0.2
+
+ - ensure ld-scope to ensure correct ld selector scoping
+
+
 ## v2.0.1
 
  - fix bug: fallback `config` to `{}` when not given to prevent exception
