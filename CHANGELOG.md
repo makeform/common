@@ -1,5 +1,12 @@
 # Change Logs
 
+## v3.0.0
+
+ - support `@grantdash/composer` host
+ - tweak margin between head and body
+ - tweak limitation decoration
+
+
 ## v2.0.2
 
  - ensure ld-scope to ensure correct ld selector scoping

@@ -13,3 +13,13 @@
 .has-variant .variant { display: inline }
 .notes { margin-top: .5em }
 .notes:empty { margin-top: 0 }
+span[ld~=editable], .editable
+  display: inline-block
+[ld~=editable] p:last-child, .editable p:last-child
+  margin-bottom: 0
+.notes
+  display: block
+  padding-left: 1em
+  .note
+    display: list-item
+    list-style-type: disc
