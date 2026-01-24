@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 rm -rf dist
-mkdir -p dist
+mkdir -p dist/term
 echo "build pug files to html files ..."
 echo "index.pug ..."
 ./node_modules/.bin/srcbuild-pug src/index.pug > dist/index.html
+echo "term/index.pug ..."
+./node_modules/.bin/srcbuild-pug src/term/index.pug > dist/term/index.html
 echo "done."
