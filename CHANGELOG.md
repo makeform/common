@@ -1,6 +1,6 @@
 # Change Logs
 
-## v3.1.0 (upcoming)
+## v3.1.0
 
  - add term editing dialog
  - add i18n for minibar tips
