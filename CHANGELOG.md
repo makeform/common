@@ -1,5 +1,11 @@
 # Change Logs
 
+## v3.1.0
+
+ - add term editing dialog
+ - add i18n for minibar tips
+
+
 ## v3.0.1
 
  - use cps-hover-host and cps-hover-reveal to replace cps-hover class
