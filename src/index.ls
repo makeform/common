@@ -3,12 +3,17 @@ module.exports =
     name: "@makeform/common"
     extend: name: \@makeform/base, dom: \overwrite
     host: name: \@grantdash/composer
-    dependencies: []
+    dependencies: [
+    * name: \ldview
+    ]
     i18n:
       en:
         "error": "error"
         "add": "Add"
         "New note": "New note"
+        minibar:
+          "add-note": title: "Add Note"
+          term: title: "Add Term"
         config:
           isRequired: name: "required", desc: "required if enabled"
           readonly: name: "read only", desc: "read only if enabled"
@@ -17,6 +22,9 @@ module.exports =
         "error": "有錯誤"
         "add": "增加"
         "New note": "新註記說明文字"
+        minibar:
+          "add-note": title: "加入註解"
+          term: title: "加入條件"
         config:
           isRequired: name: "必填", desc: "若啟用，則欄位為必填；否則為選填"
           readonly: name: "唯讀", desc: "若啟用，則欄位唯讀；否則可填寫"
@@ -37,10 +45,19 @@ module.exports =
           values: [{name: \區塊, value: \block}, {name: \行內, value: \inline}]
           name: "config.display.name", desc: "config.display.desc"
     minibar: [
-    * tip: "Add Note", icon: \i-doc, handler: ~> @add-note!
+    * tip: "minibar.add-note.title", icon: \i-list, handler: ~> @add-note!
+    * tip: "minibar.term.title", icon: \i-checklist
+      handler: ~>
+        (ret) <~ @mod.opt.manager.from {name: \@makeform/common, path: \term}, {root: document.body} .then _
+        meta = @widget.serialize!
+        ({term = []} = {}) <~ ret.interface.get meta.term .then _
+        if !Array.isArray(term) => return
+        @widget.deserialize(meta <<< {term})
+        @hitf.set {data: meta}
     ]
     render: ~> @widget.mod.info.view.render!
   init: (opt) ->
+    @{}mod.opt = opt
     opt.pubsub.on \inited, (o = {}) ~> @ <<< o
     opt.pubsub.on \subinit, (o = {}) ~> opt.pubsub.fire \init, mod: mod.apply @, [opt, o.mod]
 mod = ({root, ctx, data, parent, t, manager, i18n, host}, submod) ->
