@@ -30,6 +30,7 @@ module.exports =
           readonly: name: "唯讀", desc: "若啟用，則欄位唯讀；否則可填寫"
           display: name: "顯示模式", desc: "設定此元件如何顯示 區塊 或 行內(無標題)"
   client: (bid) ->
+    name: ~> @hitf.totext(@hitf.get!title) or ''
     config: (opt = {}) ~>
       data = @hitf.get!
       if !(obj = opt.config) => return data{readonly, is-required, config}
