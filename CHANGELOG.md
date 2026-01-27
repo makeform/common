@@ -1,6 +1,6 @@
 # Change Logs
 
-## v3.1.1 (upcoming)
+## v3.1.1
 
  - support `name` field in `@grantdash/composer` client
 
