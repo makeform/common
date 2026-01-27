@@ -1,38 +1,30 @@
 .ldcv.autogap
   script(type="@plotdb/block"): include:lsc index.ls
   .base.rwd.w-1024: .inner
-    div 表單驗證條件
+    div(t="validation-rules")
     .border.rounded.mb-2
       .px-2.pb-2.pt-1.d-flex.g-2.align-items-center(ld-each="term")
         .form-group.mb-0
           label.text-sm.mb-0 &nbsp;
           .switch.switch-sm(ld="enabled",style="width:2em;flex:0 0 auto")
-        //-.form-group.mb-0
-          label.text-sm.mb-0 預設集
-          select.form-control.form-control-sm
-            option 字數上限
-            option 電話
-            option 電子郵件
-            option 網址
-            option 自訂
         .form-group.mb-0
-          label.text-sm.mb-0 規則集
+          label.text-sm.mb-0(t="ruleset")
           select.form-control.form-control-sm(ld="opset")
             option(ld-each="opset-option")
         .form-group.mb-0
-          label.text-sm.mb-0 規則
+          label.text-sm.mb-0(t="rule")
           select.form-control.form-control-sm(ld="op")
             option(ld-each="op-option")
         .form-group.mb-0(ld-each="op-cfg")
           label.text-sm.mb-0(ld="name")
-          input.form-control.form-control-sm(ld="value",value="123")
+          input.form-control.form-control-sm(ld="value",value="")
         .form-group.flex-grow-1.mb-0
-          label.text-sm.mb-0 錯誤訊息
+          label.text-sm.mb-0(t="errmsg")
           input.form-control.form-control-sm(ld="msg",value="Error")
         .form-group.mb-0
           label.text-sm.mb-0 &nbsp;
           .text-danger: i.i-close(ld="delete")
     .d-flex.justify-content-between.align-items-center
-      .btn.btn-outline-secondary(ld="add") Add #[i.i-plus]
-      .btn.btn-outline-secondary(ld="close") Close
+      .btn.btn-outline-secondary(ld="add") #[span(t="new")] #[i.i-plus]
+      .btn.btn-outline-secondary(ld="close") #[span(t="ok")]
 
