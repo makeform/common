@@ -1,5 +1,10 @@
 # Change Logs
 
+## v3.1.1
+
+ - support `name` field in `@grantdash/composer` client
+
+
 ## v3.1.0
 
  - add term editing dialog
