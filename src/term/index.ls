@@ -57,7 +57,10 @@ module.exports =
               click:
                 enabled: ({ctx, views}) -> ctx.enabled = !ctx.enabled; views.0.render!
                 delete: ({ctx, views, ctxs}) -> ctxs.0.splice(ctxs.0.indexOf(ctx), 1); views.1.render!
+              input:
+                msg: ({node, ctx}) -> ctx.msg = node.value
               change:
+                msg: ({node, ctx}) -> ctx.msg = node.value
                 opset: ({node, ctx, views}) ->
                   ctx.opset = node.value
                   views.0.render!
@@ -65,6 +68,7 @@ module.exports =
                   ctx.op = node.value
                   views.0.render!
             handler:
+              msg: ({node, ctx, ctxs}) -> node.value = ctxs.0?msg or ''
               enabled: ({node, ctx}) -> node.classList.toggle \on, !!ctx.enabled
               "opset-option":
                 list: -> opsets
@@ -92,15 +96,10 @@ module.exports =
                 key: -> it.k
                 view:
                   action:
-                    change:
-                      value: ({node, ctx, ctxs}) -> ctxs.0{}config[ctx.k] = node.value
-                      msg: ({node, ctx, ctxs}) -> ctxs.0{}msg = node.value
-                    input:
-                      value: ({node, ctx, ctxs}) -> ctxs.0{}config[ctx.k] = node.value
-                      msg: ({node, ctx, ctxs}) -> ctxs.0{}msg = node.value
+                    change: value: ({node, ctx, ctxs}) -> ctxs.0{}config[ctx.k] = node.value
+                    input: value: ({node, ctx, ctxs}) -> ctxs.0{}config[ctx.k] = node.value
                   handler:
                     value: ({node, ctx, ctxs}) -> node.value = ctxs.0?config?[ctx.k] or ''
-                    msg: ({node, ctx, ctxs}) -> node.value = ctxs.0?msg or ''
                     name: ({node, ctx}) -> node.textContent = t(ctx?v?name or ctx?k)
                     hint: ({node, ctx}) -> node.textContent = t(ctx?v?hint or '')
 
