@@ -51,7 +51,7 @@ module.exports =
       handler: ~>
         (ret) <~ @mod.opt.manager.from {name: \@makeform/common, path: \term}, {root: document.body} .then _
         meta = @widget.serialize!
-        ({term = []} = {}) <~ ret.interface.get meta.term .then _
+        ({term} = {}) <~ ret.interface.get meta.term .then _
         if !Array.isArray(term) => return
         @widget.deserialize(meta <<< {term})
         @hitf.set {data: meta}
