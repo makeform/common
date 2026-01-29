@@ -1,5 +1,10 @@
 # Change Logs
 
+## v3.1.2
+
+ - fix bug: term is cleared when user cancel term editing
+
+
 ## v3.1.1
 
  - support `name` field in `@grantdash/composer` client
