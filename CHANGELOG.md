@@ -1,5 +1,10 @@
 # Change Logs
 
+## v3.1.3
+
+ - fix bug: customized error message in term isn't update when changed.
+
+
 ## v3.1.2
 
  - fix bug: term is cleared when user cancel term editing
