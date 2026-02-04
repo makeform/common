@@ -1,5 +1,11 @@
 # Change Logs
 
+## v3.1.4
+
+ - fix bug: note marker incorrectly align to the bottom of note text, due to nested span.
+   fixed by set the vertical align of the nested span to top
+
+
 ## v3.1.3
 
  - fix bug: customized error message in term isn't update when changed.
