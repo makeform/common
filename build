@@ -6,4 +6,9 @@ echo "index.pug ..."
 ./node_modules/.bin/srcbuild-pug src/index.pug > dist/index.html
 echo "term/index.pug ..."
 ./node_modules/.bin/srcbuild-pug src/term/index.pug > dist/term/index.html
+echo "term/konfig/*/index.pug ..."
+for name in number text choice; do
+  mkdir -p "dist/term/konfig/$name"
+  ./node_modules/.bin/srcbuild-pug "src/term/konfig/$name/index.pug" > "dist/term/konfig/$name/index.html"
+done
 echo "done."
