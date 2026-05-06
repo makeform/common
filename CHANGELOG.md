@@ -1,5 +1,11 @@
 # Change Logs
 
+## v3.2.0 (upcoming)
+
+ - add konfig widgets for term editor
+ - support term config editing with konfig
+
+
 ## v3.1.4
 
  - fix bug: note marker incorrectly align to the bottom of note text, due to nested span.
