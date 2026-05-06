@@ -1,6 +1,6 @@
 # Change Logs
 
-## v3.2.0 (upcoming)
+## v3.2.0
 
  - add konfig widgets for term editor
  - support term config editing with konfig
