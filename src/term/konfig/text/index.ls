@@ -1,6 +1,6 @@
 module.exports =
   pkg: extend: name: '@plotdb/konfig', version: 'main', path: 'text', dom: \overwrite
-  init: ({root, data, pubsub, parent}) ->
+  init: ({root, data, pubsub, parent, i18n}) ->
     view = new ldview do
       root: root
       init: dropdown: ({node}) -> new BSN.Dropdown node

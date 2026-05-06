@@ -9,7 +9,7 @@ module.exports =
     * name: \@plotdb/konfig, path: "konfig.widget.bootstrap.min.js"
     ]
     i18n:
-      "zh-TW:":
+      "zh-TW":
         "validation-rules": "表單驗證條件"
         "ruleset": "規則集"
         "rule": "規則"
@@ -32,7 +32,8 @@ module.exports =
     mod = @{}mod
     mod.widget = null
     mod.opsets = form.opset.list!
-    for opset in mod.opsets => i18n.add-resource-bundles opset.i18n if opset.i18n
+    for opset in mod.opsets =>
+      for lng, res of opset.i18n or {} => block.i18n.add-resource-bundle lng, '', res, true, true
     get-opsets = -> form.opset.list {valdef: if mod.widget => mod.widget.valdef! else null}
     get-valspec = ->
       if !mod.widget => null
@@ -78,6 +79,9 @@ module.exports =
                   ctx.op = node.value
                   views.0.render!
             handler:
+              idx: ({node, ctx}) -> 
+                idx = mod.terms.findIndex -> it.id == ctx.id
+                node.textContent = (idx + 1)
               msg: ({node, ctx}) -> node.value = ctx.msg or ''
               enabled: ({node, ctx}) -> node.classList.toggle \on, !!ctx.enabled
               "opset-option":
@@ -112,6 +116,7 @@ module.exports =
                 if op-changed and node._kfg => ctx.config = {}
                 if !node._kfg
                   ctrl-el = document.createElement \div
+                  ctrl-el.classList.toggle \flex-grow-1, true
                   ctrl-el.setAttribute \ld-each, \ctrl
                   ctrl-el.setAttribute \ld-scope, ''
                   node.appendChild ctrl-el

@@ -1,7 +1,8 @@
 div
-  div(plug="config")
-    select.form-control(ld="select")
-      option(ld-each="option")
-  style(type="text/css") .form-control { font-size: 1em }
+  style(type="text/css"): include:stylus ../index.styl
   script(type="@plotdb/block"): include:lsc index.ls
+  include ../mixin.pug
+  div(plug="base")
+    +head
+    select.form-control.form-control-sm(ld="select"): option(ld-each="option")
 
