@@ -1,5 +1,11 @@
 # Change Logs
 
+## v3.2.1
+
+ - fix bug: string can't be edited. use `fromCtx` to simplify this implementation
+ - upgrade dependencies
+
+
 ## v3.2.0
 
  - add konfig widgets for term editor

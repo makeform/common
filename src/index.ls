@@ -123,7 +123,7 @@ mod = ({root, ctx, data, parent, t, manager, i18n, host}, submod) ->
               handler: text: hitf.render obj: ({ctx}) -> ctx.label or ctx
               action: click:
                 # init: always return {} for editing. otherwise return original ctx.label
-                text: hitf.edit obj: ({ctx, init}) -> ctx{}label
+                text: hitf.edit path: \label, from-ctx: true
                 remove: ({node, ctx, views}) ~>
                   cfg = hitf.get!{}config
                   cfg.note = cfg.[]note.filter -> it.key != ctx.key
